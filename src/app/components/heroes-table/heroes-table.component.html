@@ -1,11 +1,23 @@
 <div class="filter">
     <input type="text" class="search" name="filterPoke" placeholder="Find your Hero..." [(ngModel)]="filterHero">
   </div>
-<div class="card-deck">
-    <div class="card mb-4" *ngFor="let hero of heroes | searchFilter:filterHero; index as i">
+  <label class="stats-filter" for="selectStat"> PowerStats: <i class="fas fa-angle-down"></i>
+  </label>
+  <select id="selectDupla" class="form-control filter-select" [(ngModel)]="selectedStat" (change)="filterByStats()">
+    <option value="">Stats</option>
+    <option value="intelligence">Intelligence</option>
+    <option value="strength">Strength</option>
+    <option value="speed">Speed</option>
+    <option value="durability">Durability</option>
+    <option value="power">Power</option>
+    <option value="combat">Combat</option>
+  </select>
+  <div class="card-deck">
+    <div class="card mb-4" *ngFor="let hero of filteredheroes | searchFilter:filterHero; index as i">
       <img [src]="hero.image.url" class="card-img-top" alt="{{hero.name}}">
       <div class="card-body">
         <h5 class="card-title">{{hero.name}}</h5>
       </div>
     </div>
-</div>
+  </div>
+  

@@ -9,11 +9,17 @@ import { FormsModule } from '@angular/forms';
 import { HeroesTableComponent } from './components/heroes-table/heroes-table.component';
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HeroesTableComponent,
-    SearchFilterPipe
+    SearchFilterPipe,
+   
+ 
+    
   ],
   imports: [
     BrowserModule,
