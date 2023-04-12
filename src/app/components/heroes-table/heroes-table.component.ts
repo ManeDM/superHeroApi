@@ -10,12 +10,13 @@ import { HeroesService } from 'src/app/services/heroes.service';
 export class HeroesTableComponent implements OnInit {
 
   heroes: Hero[] = [];
-  superheroService: any;
+  filterHero = '';
+ 
 
   constructor(private heroesService: HeroesService ) { }
 
   ngOnInit(): void {
-    this.superheroService.getHeroes().subscribe((response: Hero[]) => {
+    this.heroesService.getHeroes().subscribe((response: Hero[]) => {
       this.heroes = response;
       console.log(this.heroes);
     });

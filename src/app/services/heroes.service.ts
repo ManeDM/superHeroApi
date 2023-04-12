@@ -14,7 +14,7 @@ constructor(private http: HttpClient) { }
 
 getHeroes(): Observable<Hero[]> {
   const requests = [];
-  for (let i = 1; i <= 200; i++) {
+  for (let i = 1; i <= 731; i++) {
       requests.push(this.http.get<Hero>(`${this.apiUrl}/${i}`));
   }
   return forkJoin(requests);
