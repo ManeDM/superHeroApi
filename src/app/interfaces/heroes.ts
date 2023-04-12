@@ -3,6 +3,7 @@ export interface Hero {
     id: string;
     name: string;
     powerstats: {
+      [key: string]: string;
       intelligence: string;
       strength: string;
       speed: string;

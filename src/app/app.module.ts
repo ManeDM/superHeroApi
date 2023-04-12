@@ -4,17 +4,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http'
 
+import { FormsModule } from '@angular/forms';
+
 import { HeroesTableComponent } from './components/heroes-table/heroes-table.component';
+import { SearchFilterPipe } from './pipes/search-filter.pipe';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesTableComponent
+    HeroesTableComponent,
+    SearchFilterPipe,
+   
+ 
+    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
