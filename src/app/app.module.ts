@@ -10,6 +10,8 @@ import { HeroesTableComponent } from './components/heroes-table/heroes-table.com
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
 import { AppComponent } from './app.component';
 import { EffectsModule } from '@ngrx/effects';
+import { appReducer } from './state/reducers/heroes.reducers';
+
 
 
 
@@ -28,7 +30,8 @@ import { EffectsModule } from '@ngrx/effects';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    StoreModule.forRoot({ }),
+    StoreModule.forRoot({ app: appReducer })
+    
    
     
   ],

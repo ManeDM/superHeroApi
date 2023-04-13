@@ -41,7 +41,7 @@
   }
 
 
-// Estilos para ambos filtros
+
 .filter {
   display: flex;
   flex-wrap: wrap;
@@ -54,7 +54,7 @@
 
 
 
-  // Estilos para las etiquetas de cada filtro
+  
   label {
     display: block;
     margin-right: 15px;
@@ -62,11 +62,15 @@
     font-weight: bold;
     color: #333;
     font-family: poppins;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
-  // Estilos para los select de cada filtro
+ 
   select {
-    width: 150px;
+    width: 100%;
     padding: 8px;
     border: none;
     margin-right: 4px;
@@ -74,15 +78,16 @@
     border-radius: 5px;
     font-size: 14px;
     color: #666;
-    font-family: poppins;    
-    appearance: none;
+    font-family: poppins;
+    flex: 1;
   }
 
-  // Estilos para el ícono de cada filtro
+  
+
   i {
     font-size: 12px;
     margin-left: 5px;
-    color: #666;
+    
     font-family: poppins;
     &:hover {
       color: #000;
@@ -91,18 +96,62 @@
 }
 
 
-.search{
-  padding: 13px 150px;
+.search {
+  padding: 13px 5vw;
   border-radius: 25px;
   font-family: poppins;
-  font-size: 14px
+  font-size: 14px;
+  max-width: 500px;
+  min-width: 200px;
+  box-sizing: border-box;
+  background: #fff url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-search-512.png") no-repeat right 15px center;
+  background-size: 16px 16px;
 }
-// Aplicar estilos al primer div
+
 .first-filter {
   @extend .filter;
 }
 
-// Aplicar estilos al segundo div
+
 .second-filter {
   @extend .filter;
+}
+
+.logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-right: 5px;
+  height: 50px;
+}
+
+.message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: poppins;
+  
+}
+
+.slide-message {
+  animation: slide 18s linear infinite;
+}
+
+.slide-message img {
+  margin-right: 10px;
+  height: 30px;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
