@@ -39,10 +39,7 @@
     margin-top: 1rem;
     margin-bottom: 5px;
   }
-.gender-filter{
-  margin-left: 1.2rem;
-  font-family: poppins;
-}
+
 
 // Estilos para ambos filtros
 .filter {
@@ -60,7 +57,7 @@
   // Estilos para las etiquetas de cada filtro
   label {
     display: block;
-    margin-right: 10px;
+    margin-right: 15px;
     font-size: 14px;
     font-weight: bold;
     color: #333;
@@ -72,6 +69,8 @@
     width: 150px;
     padding: 8px;
     border: none;
+    margin-right: 4px;
+    margin-left: 4px;
     border-radius: 5px;
     font-size: 14px;
     color: #666;
