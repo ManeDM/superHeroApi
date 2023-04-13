@@ -1,10 +1,9 @@
 <div class="filter" id="search">
   <input type="text" class="search" name="filterHeroes" placeholder="Find your Hero..." [(ngModel)]="filterHero">
-  
 </div>
 <div class="second-filter">
 <label class="stats-filter" for="selectStat"> PowerStats: </label>
-<select id="selectDupla" class="form-control filter-select" [(ngModel)]="selectedStat" (change)="filterByStats()">
+<select id="power-stats" class="form-control filter-select" [(ngModel)]="selectedStat" (change)="filterByStats()">
   <option value="">Stats</option>
   <option value="intelligence">Intelligence</option>
   <option value="strength">Strength</option>
@@ -53,8 +52,24 @@
 <div class="card-deck">
   <div class="card mb-4" *ngFor="let hero of filteredheroes | searchFilter:filterHero; index as i">
     <img [src]="hero.image.url" class="card-img-top" alt="{{hero.name}}">
+    <h5 class="card-title">{{hero.name}}</h5>
     <div class="card-body">
-      <h5 class="card-title">{{hero.name}}</h5>
+      <div class="stats">
+      <p class="card-text"><strong>Intelligence:</strong> {{hero.powerstats.intelligence}}</p>
+      <p class="card-text"><strong>Strength:</strong> {{hero.powerstats.strength}}</p>
+      <p class="card-text"><strong>Speed:</strong> {{hero.powerstats.speed}}</p>
+      <p class="card-text"><strong>Durability:</strong> {{hero.powerstats.durability}}</p>
+      <p class="card-text"><strong>Power:</strong> {{hero.powerstats.power}}</p>
+      <p class="card-text"><strong>Combat:</strong> {{hero.powerstats.combat}}</p>
+    </div>
+    <div class="appearance">
+      <p class="card-text"><strong>Gender:</strong> {{hero.appearance.gender}}</p>
+      <p class="card-text"><strong>Race:</strong> {{hero.appearance.race}}</p>
+      <p class="card-text"><strong>Height:</strong> {{hero.appearance.height[1]}}</p>
+      <p class="card-text"><strong>Weight:</strong> {{hero.appearance.weight[1]}}</p>
+      <p class="card-text"><strong>Eye Color:</strong> {{hero.appearance["eye-color"]}}</p>
+      <p class="card-text"><strong>Hair Color:</strong> {{hero.appearance["hair-color"]}}</p>
+    </div>
     </div>
   </div>
 </div>

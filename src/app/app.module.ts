@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 
 
+
 import { HeroesTableComponent } from './components/heroes-table/heroes-table.component';
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
 import { AppComponent } from './app.component';
@@ -21,6 +22,7 @@ import { appReducer } from './state/reducers/heroes.reducers';
     AppComponent,
     HeroesTableComponent,
     SearchFilterPipe,
+    
    
  
     
@@ -30,7 +32,8 @@ import { appReducer } from './state/reducers/heroes.reducers';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    StoreModule.forRoot({ app: appReducer })
+    StoreModule.forRoot({ app: appReducer }),
+    
     
    
     

@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+
 
 import { Hero } from 'src/app/interfaces/heroes';
 import { HeroesService } from 'src/app/services/heroes.service';
 
-import { AppState } from 'src/app/state/app.state';
-import { Observable } from 'rxjs';
+
+
 import { setMessage } from '../../state/actions/heroes.actions';
 import { getMessage } from '../../state/selectors/heroes.selectors';
 
@@ -154,4 +156,6 @@ filterByHairColor() {
     this.filteredheroes = this.heroes;
   }}
 
+  
 }
+
