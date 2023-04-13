@@ -1,23 +1,55 @@
-<div class="filter">
-    <input type="text" class="search" name="filterPoke" placeholder="Find your Hero..." [(ngModel)]="filterHero">
-  </div>
-  <label class="stats-filter" for="selectStat"> PowerStats: <i class="fas fa-angle-down"></i>
-  </label>
-  <select id="selectDupla" class="form-control filter-select" [(ngModel)]="selectedStat" (change)="filterByStats()">
-    <option value="">Stats</option>
-    <option value="intelligence">Intelligence</option>
-    <option value="strength">Strength</option>
-    <option value="speed">Speed</option>
-    <option value="durability">Durability</option>
-    <option value="power">Power</option>
-    <option value="combat">Combat</option>
+<div class="filter" id="search">
+  <input type="text" class="search" name="filterHeroes" placeholder="Find your Hero..." [(ngModel)]="filterHero">
+</div>
+<div class="gender-filter">
+<label>Gender:</label>
+  <input type="radio" id="male" name="gender" value="male" [(ngModel)]="selectedGender" (change)="filterByGender()">
+  <label for="male">Male</label>
+  <input type="radio" id="female" name="gender" value="female" [(ngModel)]="selectedGender" (change)="filterByGender()">
+  <label for="female">Female</label>
+</div>
+<div class="second-filter">
+<label class="stats-filter" for="selectStat"> PowerStats: <i class="fas fa-angle-down"></i></label>
+<select id="selectDupla" class="form-control filter-select" [(ngModel)]="selectedStat" (change)="filterByStats()">
+  <option value="">Stats</option>
+  <option value="intelligence">Intelligence</option>
+  <option value="strength">Strength</option>
+  <option value="speed">Speed</option>
+  <option value="durability">Durability</option>
+  <option value="power">Power</option>
+  <option value="combat">Combat</option>
+</select>
+  <label class="race-filter" for="selectRace">Race: <i class="fas fa-angle-down"></i></label>
+  <select id="selectRace" class="form-control filter-select" [(ngModel)]="selectedRace" (change)="filterByRace()">
+  <option value="">Races</option>
+  <option *ngFor="let race of getUniqueRaces()" [value]="race">{{race}}</option>
   </select>
-  <div class="card-deck">
-    <div class="card mb-4" *ngFor="let hero of filteredheroes | searchFilter:filterHero; index as i">
-      <img [src]="hero.image.url" class="card-img-top" alt="{{hero.name}}">
-      <div class="card-body">
-        <h5 class="card-title">{{hero.name}}</h5>
-      </div>
+  <label class="height-filter" for="selectHeight">Height: <i class="fas fa-angle-down"></i></label>
+  <select id="selectHeight" class="form-control filter-select" [(ngModel)]="selectedHeight" (change)="filterByHeight()">
+  <option value="">Height</option>
+  <option *ngFor="let height of getUniqueHeight()" [value]="height">{{height}}</option>
+  </select>
+  <label class="weight-filter" for="selectWeight">Weight: <i class="fas fa-angle-down"></i></label>
+  <select id="selectWeight" class="form-control filter-select" [(ngModel)]="selectedWeight" (change)="filterByWeight()">
+  <option value="">Weight</option>
+  <option *ngFor="let weight of getUniqueWeight()" [value]="weight">{{weight}}</option>
+  </select>
+  <label class="eye-color-filter" for="selectEyeColor">Eye Color: <i class="fas fa-angle-down"></i></label>
+  <select id="selectEyeColor" class="form-control filter-select" [(ngModel)]="selectedEyeColor" (change)="filterByEyeColor()">
+  <option value="">Eyes</option>
+  <option *ngFor="let eyeColor of getUniqueEyeColor()" [value]="eyeColor">{{eyeColor}}</option>
+  </select>
+  <label class="hair-color-filter" for="selectHairColor">Hair Color: <i class="fas fa-angle-down"></i></label>
+  <select id="selectHairColor" class="form-control filter-select" [(ngModel)]="selectedHairColor" (change)="filterByHairColor()">
+  <option value="">Hair</option>
+  <option *ngFor="let hairColor of getUniqueHairColor()" [value]="hairColor">{{hairColor}}</option>
+  </select>
+</div>
+<div class="card-deck">
+  <div class="card mb-4" *ngFor="let hero of filteredheroes | searchFilter:filterHero; index as i">
+    <img [src]="hero.image.url" class="card-img-top" alt="{{hero.name}}">
+    <div class="card-body">
+      <h5 class="card-title">{{hero.name}}</h5>
     </div>
   </div>
-  
+</div>

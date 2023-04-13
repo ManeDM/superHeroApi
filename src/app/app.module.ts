@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http'
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import {HttpClientModule} from '@angular/common/http'
-
 import { FormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+
 
 import { HeroesTableComponent } from './components/heroes-table/heroes-table.component';
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
+import { AppComponent } from './app.component';
+import { EffectsModule } from '@ngrx/effects';
 
 
 
@@ -25,7 +27,10 @@ import { SearchFilterPipe } from './pipes/search-filter.pipe';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    StoreModule.forRoot({ }),
+   
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

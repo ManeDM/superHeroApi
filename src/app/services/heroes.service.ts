@@ -7,9 +7,6 @@ import { Hero } from '../interfaces/heroes';
   providedIn: 'root'
 })
 export class HeroesService {
-heroes(selectedStat: string, heroes: any): Hero[] {
-  throw new Error('Method not implemented.');
-}
 
 private apiUrl = 'https://www.superheroapi.com/api.php/191724957000276';
 
