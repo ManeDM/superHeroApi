@@ -39,23 +39,71 @@
     margin-top: 1rem;
     margin-bottom: 5px;
   }
+.gender-filter{
+  margin-left: 1.2rem;
+  font-family: poppins;
+}
 
-  .filter{
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    
-    
-    
-    .search{
-        height: 50px;
-        width: 70%;
-        border-radius: 60px;
-        font-size: 25px;
-        font-family: sans-serif;
-        text-align: center;
-        margin-top: 2rem;
-        }
-        
+// Estilos para ambos filtros
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: poppins;
+  border-radius: 10px;
+  margin-bottom: 20px;
 
+
+
+  // Estilos para las etiquetas de cada filtro
+  label {
+    display: block;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    font-family: poppins;
+  }
+
+  // Estilos para los select de cada filtro
+  select {
+    width: 150px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #666;
+    font-family: poppins;    
+    appearance: none;
+  }
+
+  // Estilos para el ícono de cada filtro
+  i {
+    font-size: 12px;
+    margin-left: 5px;
+    color: #666;
+    font-family: poppins;
+    &:hover {
+      color: #000;
+    }
+  }
+}
+
+
+.search{
+  padding: 13px 150px;
+  border-radius: 25px;
+  font-family: poppins;
+  font-size: 14px
+}
+// Aplicar estilos al primer div
+.first-filter {
+  @extend .filter;
+}
+
+// Aplicar estilos al segundo div
+.second-filter {
+  @extend .filter;
 }
