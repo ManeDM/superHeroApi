@@ -40,7 +40,30 @@
     margin-bottom: 5px;
   }
 
-
+  .card-text{
+    text-align: center;
+    text-transform: capitalize;
+    font-family: poppins;
+    font-size: 13px;
+  }
+  
+  .card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+  }
+  
+  .stats {
+    grid-column: 1 / 2;
+    padding-left:12px;
+    
+    ;
+  }
+  
+  .appearance {
+    grid-column: 2 / 3;
+    padding-right: 12px
+  }
 
 .filter {
   display: flex;
